@@ -1,0 +1,704 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>유영준 | Front-end Developer</title><style>
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	text-indent: -1.7em;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, YuMincho, "Yu Mincho", "Hiragino Mincho ProN", "Hiragino Mincho Pro", "Songti TC", "Songti SC", "SimSun", "Nanum Myeongjo", NanumMyeongjo, Batang, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC', 'Noto Sans CJK KR'; }
+
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC', 'Noto Sans Mono CJK KR'; }
+
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, YuMincho, "Yu Mincho", "Hiragino Mincho ProN", "Hiragino Mincho Pro", "Songti TC", "Songti SC", "SimSun", "Nanum Myeongjo", NanumMyeongjo, Batang, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC', 'Noto Sans CJK KR'; }
+
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC', 'Noto Sans Mono CJK KR'; }
+
+.highlight-default {
+}
+.highlight-gray {
+	color: rgb(155,154,151);
+}
+.highlight-brown {
+	color: rgb(100,71,58);
+}
+.highlight-orange {
+	color: rgb(217,115,13);
+}
+.highlight-yellow {
+	color: rgb(223,171,1);
+}
+.highlight-teal {
+	color: rgb(15,123,108);
+}
+.highlight-blue {
+	color: rgb(11,110,153);
+}
+.highlight-purple {
+	color: rgb(105,64,165);
+}
+.highlight-pink {
+	color: rgb(173,26,114);
+}
+.highlight-red {
+	color: rgb(224,62,62);
+}
+.highlight-gray_background {
+	background: rgb(235,236,237);
+}
+.highlight-brown_background {
+	background: rgb(233,229,227);
+}
+.highlight-orange_background {
+	background: rgb(250,235,221);
+}
+.highlight-yellow_background {
+	background: rgb(251,243,219);
+}
+.highlight-teal_background {
+	background: rgb(221,237,234);
+}
+.highlight-blue_background {
+	background: rgb(221,235,241);
+}
+.highlight-purple_background {
+	background: rgb(234,228,242);
+}
+.highlight-pink_background {
+	background: rgb(244,223,235);
+}
+.highlight-red_background {
+	background: rgb(251,228,228);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(55, 53, 47, 0.6);
+	fill: rgba(55, 53, 47, 0.6);
+}
+.block-color-brown {
+	color: rgb(100,71,58);
+	fill: rgb(100,71,58);
+}
+.block-color-orange {
+	color: rgb(217,115,13);
+	fill: rgb(217,115,13);
+}
+.block-color-yellow {
+	color: rgb(223,171,1);
+	fill: rgb(223,171,1);
+}
+.block-color-teal {
+	color: rgb(15,123,108);
+	fill: rgb(15,123,108);
+}
+.block-color-blue {
+	color: rgb(11,110,153);
+	fill: rgb(11,110,153);
+}
+.block-color-purple {
+	color: rgb(105,64,165);
+	fill: rgb(105,64,165);
+}
+.block-color-pink {
+	color: rgb(173,26,114);
+	fill: rgb(173,26,114);
+}
+.block-color-red {
+	color: rgb(224,62,62);
+	fill: rgb(224,62,62);
+}
+.block-color-gray_background {
+	background: rgb(235,236,237);
+}
+.block-color-brown_background {
+	background: rgb(233,229,227);
+}
+.block-color-orange_background {
+	background: rgb(250,235,221);
+}
+.block-color-yellow_background {
+	background: rgb(251,243,219);
+}
+.block-color-teal_background {
+	background: rgb(221,237,234);
+}
+.block-color-blue_background {
+	background: rgb(221,235,241);
+}
+.block-color-purple_background {
+	background: rgb(234,228,242);
+}
+.block-color-pink_background {
+	background: rgb(244,223,235);
+}
+.block-color-red_background {
+	background: rgb(251,228,228);
+}
+.select-value-color-default { background-color: rgba(206,205,202,0.5); }
+.select-value-color-gray { background-color: rgba(155,154,151, 0.4); }
+.select-value-color-brown { background-color: rgba(140,46,0,0.2); }
+.select-value-color-orange { background-color: rgba(245,93,0,0.2); }
+.select-value-color-yellow { background-color: rgba(233,168,0,0.2); }
+.select-value-color-green { background-color: rgba(0,135,107,0.2); }
+.select-value-color-blue { background-color: rgba(0,120,223,0.2); }
+.select-value-color-purple { background-color: rgba(103,36,222,0.2); }
+.select-value-color-pink { background-color: rgba(221,0,129,0.2); }
+.select-value-color-red { background-color: rgba(255,0,26,0.2); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="777f679c-594e-4f54-86aa-329d5d86dbb1" class="page sans"><header><img class="page-cover-image" src="https://images.unsplash.com/photo-1587654780291-39c9404d746b?ixlib=rb-1.2.1&amp;q=85&amp;fm=jpg&amp;crop=entropy&amp;cs=srgb" style="object-position:center 50%"/><div class="page-header-icon page-header-icon-with-cover"><span class="icon">👨🏻‍💻</span></div><h1 class="page-title">유영준 | Front-end Developer</h1></header><div class="page-body"><h3 id="94d4df19-1c0f-4b36-8aa7-25c07e7d3cbf" class="">사용자들에게 최고의 경험을 드리기 위해 다양한 디바이스 및 플랫폼과 웹 기술들을 연구합니다.</h3><h2 id="0e89c303-e8c2-41e1-9774-bb47fc5ea2ba" class="">Contact.</h2><p id="1a2da05b-4e7d-474e-ab28-49b06995b059" class="">Email <strong>isaac_you@naver.com</strong></p><p id="70fb99ed-d6f0-4676-95d0-433c8947f3bc" class="">Phone +<strong>82 10-9355-9686</strong></p><h2 id="76c6a93a-f50b-467b-ae59-3500c5c10f4e" class="">Channel</h2><p id="a8a00382-8027-49d7-ad4a-a3a8ecb42d1d" class="">Github <a href="https://github.com/isaacyoukorea">https://github.com/isaacyoukorea</a></p><h1 id="0e7605cd-0988-4bdf-bf2f-802019385204" class="block-color-yellow_background">Introduce</h1><p id="81934fa3-d581-445c-b626-d707a4289e4c" class="">고객과 사용자들에게 최고의 결과물을 내기 위해서 필요한 기술을 연습하고 습득하기를 주저하지 않았습니다.</p><p id="84bdbff2-74af-41c9-abda-fc2c8b77ccc7" class="">프로젝트에 필요한 기술들을 습득하다보니 Web 뿐만 아니라 Hardware 및 3D, Animation 등 사람의 인지와 관련된 분야의 개발을 해볼 수 있었습니다. 특히 최근에는 CPU나 메모리가 충분하지 않은 TV, 냉장고 등 하드한 환경에서도 60fps로 동작되는 웹을 만들기 위해 노력하고 있습니다.</p><p id="6f69bc82-06d0-42bb-a2f4-94a813155ba5" class="">이렇게 쌓인 경험치들을 바탕으로 삼성, 빅히트 등 글로벌 기업들에서 오는 다양한 형태의 프로젝트들을 자신감있게 해결할 수 있었고, 끝까지 책임을 다해 좋은 결과들을 만들어왔습니다.</p><p id="bf9db887-08a6-4ce5-981d-1e9a7b6856e4" class="">규모가 큰 프로젝트를 하다보니 협업의 중요성에 대해서 다시금 깨닫고 팀 리딩을 위해 Typescript나 개발 설계 등에 대해서도 관심을 갖고 공부하고 있습니다.</p><p id="eee959fa-c8c0-4ea8-86ef-6c351f6c55a2" class="">
+</p><h1 id="79efad98-f05d-4a2b-832c-1aafc8b49c8b" class="block-color-yellow_background">Skills</h1><p id="b2b4f4e8-df61-483e-aac4-3ce88960b462" class="">숙달됨 - 클라이언트, 사용자에게 배포되는 프로젝트에서 여러차례 사용해봄</p><p id="9a718a2c-b798-4fcd-95f2-ddb0c2e171fa" class="">훈련중 - 사내 프로젝트에서 사용해보거나, 배포 프로젝트에서 한 두차례 사용해본 경험이 있음</p><p id="e0b76d3c-6210-43b5-9914-e74e8b4537a7" class="">보조로 사용 - 원활하게 사요아지 </p><h3 id="537aea0d-23ef-4f4e-a972-4220a0ad20eb" class="">Web</h3><div id="ba9e0d43-3ffa-4bd6-bdc4-a7fa0fb37351" class="column-list"><div id="0735d0e0-90da-4bc1-ba94-2f3d009df6c9" style="width:49.99999999999999%" class="column"><p id="243e4b23-845f-47a6-b02b-a4a491c86eb2" class="">숙달됨
+Javascript, Typescript, Vuejs, Vuex, SCSS, Webpack, Prerender, HTML, PUG, Docker, Tizen, WebOS, Canvas, p5.js, TweenMax, D3, Swiper</p></div><div id="5cdc15f5-a6fe-4e6a-ad78-fd4cad906eed" style="width:50.000000000000014%" class="column"><p id="53870f3c-1afc-42d6-b4c2-21b7d1772475" class="">훈련중
+ReactJS, Redux, NextJS, NuxtJS, GraphQL, WebWorker, WebGL</p><p id="1042c3d8-6128-4c0e-b301-6f50aa2f2e39" class="">
+</p></div></div><h3 id="5188c586-7ca8-4263-93f8-5efc5e7adda7" class="">Mobile Application</h3><p id="870ab512-7a79-4907-8ee7-5c06f2579447" class="">Flutter</p><p id="24e3b769-1dbc-4db2-a68a-0553ce11a3c6" class="">Android</p><h3 id="0b3a53d3-b4d9-4364-a0ce-1dcab3d607df" class="">ETC</h3><p id="681d5d05-7f68-425c-98e5-f259b101028e" class="">C++,  Python3</p><h3 id="55465f98-9b18-4da6-85cc-a803ec47ceb3" class=""><strong>Backend</strong></h3><p id="c6a1e865-83f3-463b-96db-f1e9ae414375" class="">AWS, Firebase</p><h3 id="33371049-503f-47e0-8c31-2d25422ccd02" class="">Hardware</h3><p id="2223248e-839b-48a4-9fa4-8e4af1f7dd3d" class="">Arduino</p><h3 id="d6ef95d2-39d5-4ef7-ac30-fc3e20aa18a0" class="">3D 그래픽스</h3><p id="f7c32266-79cf-4feb-921c-fa53735dcf5e" class="">Unity3D(C#), Vuforia (AR)</p><h3 id="735be139-8484-45b4-b086-95c99dfa5ea3" class="">협업도구</h3><p id="bc47472c-4a10-423d-b08b-91d135b678a5" class="">Git, Jira, Confluence, Zeplin</p><h1 id="ce095559-ab6e-4eb4-bac6-8e161f9c1a58" class="block-color-yellow_background">경력 사항</h1><div id="370f778c-23bc-4d9a-bfc0-5a4ca8e63396" class="column-list"><div id="e13f8c36-92c1-47b1-ac85-48a2234a80bf" style="width:25%" class="column"><h2 id="a5f9075d-5235-41e3-a939-30c6325893bb" class="">핸드스튜디오</h2><p id="acf60ba0-9868-403c-9c5a-0cc957776de0" class="">웹개발팀
+책임 연구원
+2016년 7월 ~ 현재
+(4년 7개월~)</p><p id="8ec3369b-9b0a-49d0-a6a5-a5b765f7518a" class="">
+</p></div><div id="df889522-6f0c-47f9-8ddd-cff7ae67ad1d" style="width:75%" class="column"><ul id="f0fd43c2-6805-449e-8931-b44ab323d2aa" class="bulleted-list"><li>삼성, 빅히트, 카카오, NC 다이노스 등 다양한 글로벌 기업과 함께 다수의 서비스 프로젝트 개발</li></ul><ul id="9601dc5e-1695-44d8-8b9d-fc399e24fe1a" class="bulleted-list"><li>웹이 동작되는 PC, 모바일, TV, 냉장고 등 다양한 플랫폼과 다양한 성능의 기기에서 개발</li></ul><ul id="feb7939f-ca45-45b0-9e1e-7026fd34053d" class="bulleted-list"><li>제품화에 성공한 더 세로 TV와 갤럭시 워치 HW 프로토타이핑 개발</li></ul><ul id="dac34d79-b8c2-4208-80b2-5ee1a43c2814" class="bulleted-list"><li>좋은 퍼포먼스의 웹 애니메이션 개발</li></ul></div></div><p id="1cc61975-01a0-404a-82d7-c940ef70bbd9" class="">
+</p><hr id="93ee3f04-7328-43ae-996c-975458281f75"/><p id="f2ace14a-e886-46b9-ae28-55079d21e270" class="">
+</p><div id="0d2570a3-bbca-477b-8dc3-613e448b8498" class="column-list"><div id="cfaee8f9-2ae9-4bc5-b6a6-a808ba321b98" style="width:25%" class="column"><h3 id="4d2a629f-73db-4682-8715-3207607d01db" class="">브이터치 (스타트업)</h3><p id="584a6e66-8c5d-4d2a-8612-0514d1ab1fd6" class="">SW Engineering 팀
+연구원
+2013년 5월
+~ 2015년 6월
+(2년 1개월)</p><p id="b6b3ee11-dcd4-4b0a-abb5-2df6e0d2ec42" class="">
+</p></div><div id="c44d6975-f79c-49cf-985d-3d15d11f1f4a" style="width:75%" class="column"><ul id="6feb4922-67e3-42d1-b326-e67f8494b3db" class="bulleted-list"><li>손가락의 움직임과 눈 위치를 인식하여 사용자의 의도대로 사물을 제어하는 방식을 연구</li></ul><ul id="cd2e24d8-be13-47fc-87e5-4d36677e8af2" class="bulleted-list"><li>유저가 가리키는 사물 파악 방식과 액션을 배치할 수 있는 웹 시스템 개발</li></ul><ul id="80bcbfe7-6e93-460c-8cc2-b650e24ff83f" class="bulleted-list"><li>조명 / TV / 그외 기타 Arduino와 연결된 사물들을 제어할 수 있는 웹 시스템 개발</li></ul><ul id="a2b0dc39-913a-4191-a2e5-c640b2b8b3a2" class="bulleted-list"><li>시제품 개발 및 설치 (롯데시네마, 상암 디지털 파빌리온, 광고문화회관 등)</li></ul><ul id="8c2a0f6f-b89a-4329-95bb-fd16288508d8" class="bulleted-list"><li>모바일과 동작인식 매칭 시스템 관련 특허 등록
+(출원번호 1020140062668)<figure id="d9705fba-49a4-4727-9a5b-bec5eee07fa3"><div class="source"><a href="https://www.youtube.com/watch?v=2K7EiolkK3Y">https://www.youtube.com/watch?v=2K7EiolkK3Y</a></div></figure></li></ul></div></div><p id="254612d0-ffba-4084-b006-3983b67a0852" class="">
+</p><hr id="e8fd32f2-1369-42b0-b3bf-d1ec988db1b6"/><p id="8028569f-618c-45d3-ae3c-8af1671e452a" class="">
+</p><div id="a5c6432f-35ae-46cd-9c08-6cf96c456705" class="column-list"><div id="849548d9-e97d-4864-bd75-6f9d89fccf41" style="width:25%" class="column"><h3 id="5c981977-b3ad-4a7d-b577-87ffde4f3d29" class="">삼성 SDS</h3><p id="730268c7-86a7-4186-9f55-c496fe7f57ba" class="">SW Engineering 팀
+인턴
+2012년 6월
+~ 2012년 8월 (2개월)</p></div><div id="9df88025-2f76-4cab-ad82-3728fceaa824" style="width:75%" class="column"><ul id="dbcd7cbe-89a3-4071-9816-82d11bc448d8" class="bulleted-list"><li>흥국화재 차세대 프로젝트 QA</li></ul><ul id="24e178c0-21a6-4070-860c-8f0a8cb3b87c" class="bulleted-list"><li>고객/보험상품/손해보상 관리 프로그램의 DB/UI QA</li></ul></div></div><p id="249f3eeb-5f71-43b9-84a5-987f28966e43" class="">
+</p><h1 id="4659c2d1-a1bc-42c3-ba07-ab8d59b0903a" class="block-color-yellow_background">프로젝트</h1><ol id="c35ddf79-adff-4a8d-8a00-5ee9780d1aa1" class="numbered-list" start="1"><li>웹앱 - 다양한 디바이스</li></ol><ol id="2ca251f8-8763-428e-a09b-2330f36919a0" class="numbered-list" start="2"><li>웹 - 모바일, PC</li></ol><ol id="509dfdbb-7958-42fc-adca-c1b0b5627789" class="numbered-list" start="3"><li>웹 애니메이션과 차트</li></ol><ol id="442738b1-23ce-46c1-837d-90391e290ef3" class="numbered-list" start="4"><li>하드웨어 프로토타이핑</li></ol><ol id="09328561-e0fc-4f32-8c3c-fb6a080f864e" class="numbered-list" start="5"><li>개인프로젝트</li></ol><h2 id="00e43c47-3164-4045-9811-a6ac22ee921d" class="block-color-teal_background">웹앱 - 다양한 디바이스</h2><ul id="39808e37-c4b3-4df8-8179-a670d462d092" class="bulleted-list"><li>좋은 퍼포먼스를 내기 위한 고민</li></ul><ul id="30ead59c-8794-4ad5-8365-ef374c92a82d" class="bulleted-list"><li>각 디바이스 별 특징과 UX를 고려한 개발</li></ul><p id="52f76ff3-62ab-40ef-81fe-ee439476458c" class="">TV나 냉장고와 같은 저사양의 디바이스들에서 나쁜 퍼포먼스는 많은 유저들을 이탈하게 만드는 중요한 요소가 됩니다. 저는 이러한 디바이스들에서도 사용자들이 자연스럽다고 느낄 수 있는 퍼포먼스를 만들기 위해 렌더링 비용과 메모리 사용량등을 개선하였고, 다양한 디바이스에서 제공되는 자체 API들을 통합하여 개발을 더욱 구조화할 수 있도록 하는데 역량을 집중하였습니다. 또한 TV는 포인터 기반인 모바일과 터치와는 다른 키-포커스 형태로 동작되기 때문에 이에 대응할 수 있는 레이아웃 시스템을 개발하였습니다.
+</p><div id="aa634ac3-8026-4911-8ae0-ff96450e3c68" class="column-list"><div id="cabdfe33-f23c-4c2b-ad48-68478b543be5" style="width:18.75%" class="column"><h3 id="551426a8-c403-4942-b366-4683f41a32dc" class="">위버스 TV</h3><p id="6b46be62-8432-4f1b-97cc-bb556208f65c" class=""><strong>활용기술</strong></p><ul id="beab5d18-f820-4b7e-8529-8680568fc355" class="bulleted-list"><li>VueJS (decorator)</li></ul><ul id="22b1ea68-9197-456d-ac7b-54ec465c0922" class="bulleted-list"><li>Typescript</li></ul><ul id="1d922e53-09c9-4b27-9bb3-579fe8a5d5d0" class="bulleted-list"><li>Shaka Player</li></ul><ul id="afe07a00-6e36-4317-863c-e7bc2488cece" class="bulleted-list"><li>Tizen</li></ul><ul id="36c9017d-c030-41c0-b67a-82db45af14d3" class="bulleted-list"><li>WebOS</li></ul><p id="2406e9d0-7d2e-4400-9d88-e7fe63d24bd7" class="">
+</p></div><div id="108140c0-97a8-4941-a525-971ad438388a" style="width:81.25%" class="column"><p id="cfb5cf58-2a76-4f11-adfd-37a9cca5e8ff" class="">빅히트의 자사 서비스 위버스를 TV에서도 시청할 수 있도록 컨버팅한 앱</p><p id="6fa0e74e-e0a6-48fd-b040-d1eff20d2218" class="">
+</p><p id="b9c074ab-40a1-46bc-a1ab-7198e396afca" class=""><strong>수행 업무</strong></p><ul id="b525f859-b34f-4911-862f-abdf6af4b623" class="bulleted-list"><li>개발 총괄 역활, 구조 설계부터 런칭까지 책임</li></ul><ul id="cb692636-3811-42f0-bb41-c414769e4608" class="bulleted-list"><li>TV Layout 시스템 개발</li></ul><ul id="ac800385-5ab4-471f-906e-6ba8fbef3b9f" class="bulleted-list"><li>삼성(Tizen OS)와 LG(WebOS) 양 플랫폼에서 사용할 수 있는 공통 모듈 개발</li></ul><ul id="bca14403-f5f0-4fb3-97bf-3f474ab798f2" class="bulleted-list"><li>구글 드라이브를 활용한 다국어 번역 모듈 개발</li></ul><ul id="a17c7d5a-7906-4a40-b932-399ad4afaa07" class="bulleted-list"><li>ConnectSDK를 활용하여 모바일에서 이어보기 기능 개발</li></ul><p id="04f62bc0-5b84-4458-b651-8489c0609d2c" class="">
+</p><p id="af958983-0b81-45ff-b121-b9b246a4e0ff" class=""><strong>소개 자료</strong></p><figure id="5b50d290-fc40-47c8-bb32-e5e1d911ed05"><a href="https://www.yna.co.kr/view/AKR20210109061600003" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">&quot;대화면으로 BTS를&quot;...삼성 스마트TV, 빅히트엔터 &#x27;위버스&#x27; 론칭 | 연합뉴스</div><div class="bookmark-description">(서울=연합뉴스) 김영신 기자 = 삼성전자[005930] 스마트 TV에서 빅히트엔터테인먼트가 운영하는 팬 커뮤니티 플랫폼 &#x27;위버스&#x27;(Weverse)로 콘텐츠를 이용할 수 있다. 10일 삼성전자에 따르면 전 세계에서 2018년형 이후 삼성 스마트 TV가 지난해 12월 말부터 위버스 애플리케이션 서비스를 시작했다. 위버스는 방탄소년단(BTS), 세븐틴, 여자친구 등이 소속한 빅히트엔터테인먼트의 자회사 비엔엑스(beNX)가 운영하는 글로벌 팬 커뮤니티 플랫폼이다.</div></div><div class="bookmark-href"><img src="https://r.yna.co.kr/www/home_n/v02/img/favicon.ico" class="icon bookmark-icon"/>https://www.yna.co.kr/view/AKR20210109061600003</div></div><img src="https://img0.yna.co.kr/etc/inner/KR/2021/01/09/AKR20210109061600003_01_i_P4.jpg" class="bookmark-image"/></a></figure></div></div><p id="fd48cb70-5ba4-417d-96c3-96210e41fed5" class="">
+</p><hr id="3a5935f6-333a-495f-a353-451a4730c18a"/><p id="6618c252-b93c-45f6-b5cf-1072b9b19a22" class="">
+</p><div id="9bb89d6f-ef17-476f-a6d9-36445eac1d39" class="column-list"><div id="bd7b681f-59a2-4654-9f9d-8dd6fefaa6f4" style="width:18.75%" class="column"><h3 id="10838c1d-1c6f-43cd-87eb-20180d2f56d8" class="">멜론 TV</h3><p id="4e3a5b57-bc99-445f-904e-641666c6fb63" class=""><strong>활용 기술</strong></p><ul id="ac59c1e5-ed64-445a-99cf-f07cbed3ce82" class="bulleted-list"><li>VueJS (decorator)</li></ul><ul id="aaaa48c0-29ff-4604-a496-7fa79ea7ed7a" class="bulleted-list"><li>Typescript</li></ul><ul id="b728bd61-1d63-470d-ab3e-6da01c458348" class="bulleted-list"><li>Tizen</li></ul></div><div id="e23f2df8-c398-475f-a243-d31238de1053" style="width:81.25%" class="column"><p id="409ac1c1-1db4-4f3b-bb8d-50c0a0e25123" class="">카카오 멜론의 자사 서비스를 TV에서 사용할 수 있도록 컨버팅한 앱</p><p id="ec336f91-0638-4561-804c-7068703f081e" class="">
+</p><p id="92bb9bee-ed65-4f15-b66e-1159441c10c1" class=""><strong>수행 업무</strong></p><ul id="84b0b6fb-3e1d-4eec-8078-ed13d1d72d0f" class="bulleted-list"><li>TV Bixby를 이용한 음악 검색 서비스 개발</li></ul><ul id="fc1496da-7db9-4d1e-aaaa-382a0fe9069b" class="bulleted-list"><li>삼성 IoT 플랫폼인 SmartThings와 연계한 다기기 환경(Multi Device Environment)에서의 멜론 이어듣기 개발</li></ul><p id="9224859b-de68-4e23-8f62-78220d0069e1" class="">
+</p></div></div><hr id="9ceee51a-a427-4c91-b547-06c70d6d3eff"/><p id="a172ab7b-5f24-40f2-8745-cd2c71725407" class="">
+</p><div id="a60e9f30-9823-4a44-bdc8-69c588e34ef0" class="column-list"><div id="cf6597f3-8546-4783-b7df-dc181833d02c" style="width:18.75%" class="column"><h3 id="1e888727-2126-4424-ba5c-77151a933ed1" class="">스팀링크 TV </h3><p id="25a44c52-21ec-405f-9f8f-1075fc456ae9" class=""><strong>활용 기술</strong></p><ul id="d7934a76-711f-4754-9696-e5819072dd0c" class="bulleted-list"><li>Vanila JS, Tizen</li></ul><p id="052dacde-01e4-4eef-8581-e3f357f8a0d4" class="">
+</p></div><div id="e4a4ac01-27d3-4de4-9b53-fd548d3aa5fe" style="width:81.25%" class="column"><p id="82edfdec-0621-4ff4-836a-e8feab01b942" class="">게임 배급사 스팀의 게임을 게임 컨트롤러와 미러링으로 TV에서도 즐길 수 있는 앱</p><p id="6d706ca8-eee4-464f-b856-bd685709827a" class=""><strong>수행 업무</strong></p><ul id="83d0f07b-f38e-4717-a2f6-305bb935310f" class="bulleted-list"><li>개발 총괄로써 설계부터 런칭까지 책임</li></ul><ul id="51b59e2d-4b84-424e-813c-123b57624ce9" class="bulleted-list"><li>스팀 연결까지 필요한 모든 과정(PC 검색 및 설정 등) 개발</li></ul><ul id="a7e61d97-5f6c-49a3-be92-b33bed5d5d8c" class="bulleted-list"><li>조이스틱 및 별도 게임 컨트롤러 인식 및 제어 기능 개발</li></ul><p id="76da1740-0654-41bd-8219-a4d6c71ebde6" class=""><strong>소개 자료</strong></p><figure id="cc1882b2-e2d1-4262-847a-d6a92ecaf4ab"><a href="https://biz.chosun.com/site/data/html_dir/2017/08/13/2017081300374.html" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">&quot;삼성 스마트 TV로 PC용 게임 즐긴다&quot;...삼성전자, 美 게임사 밸브와 &#x27;스팀링크&#x27; 앱 제공</div><div class="bookmark-description">삼성전자는 세계 최대 게임 유통 플랫폼 &#x27;스팀(Steam)&#x27;을 개발한 미국 게임회사 &#x27;밸브(Valve)&#x27;와 손잡고 삼성 스마트 TV로 PC용 게임 화면을 즐길 수 있게 스트리밍하는 &#x27;스팀링크(Steam Link)&#x27; 애플리케이션(앱)을 선보였다고 13일 밝혔다. 스팀링크는 스팀이 제공하는 6000여개의 유·무료 PC 게임을 유무선 스트리밍을 통해 TV로 연결해 대(大)화면으로 즐길 수 있게 해주는 서비스다.</div></div><div class="bookmark-href"><img src="https://biz.chosun.com/favicon.ico" class="icon bookmark-icon"/>https://biz.chosun.com/site/data/html_dir/2017/08/13/2017081300374.html</div></div><img src="https://image.chosun.com/sitedata/image/201708/13/2017081300365_0.jpg" class="bookmark-image"/></a></figure></div></div><p id="5d68afe6-a228-408f-a694-54efe4e537f5" class="">
+</p><hr id="02d89c4a-0730-4870-ab64-c0fbb684a0cc"/><p id="7fc72de5-c689-4f6d-961f-3fa541a66756" class="">
+</p><div id="6d07d7c2-4116-48c9-808b-53d303c7d589" class="column-list"><div id="a59d5eed-474c-4b5f-91f9-ca7ba49d3ebf" style="width:18.75%" class="column"><h3 id="a644ac35-a94d-443a-935f-ae9a27b0f4f8" class="">게임 TV</h3><p id="0b9b9f06-4399-43ff-841c-a6c90b3c24ae" class=""><strong>활용 기술</strong></p><ul id="e369b6c5-2e60-496c-9d98-5a7f6be92946" class="bulleted-list"><li>AngularJS</li></ul><ul id="1afef46f-cc88-4482-adb9-06e8698f598d" class="bulleted-list"><li>Coffeescript</li></ul><ul id="d1b3e4f0-ceba-4563-84cb-9f37ec6dabd1" class="bulleted-list"><li>Jenkins</li></ul><ul id="08e90ce8-33b5-46a5-9cfe-d3015388fff6" class="bulleted-list"><li>HLS.js </li></ul></div><div id="4bc21c91-ce72-4359-b085-b12473c19d2a" style="width:81.25%" class="column"><p id="d0e1f15d-e6cf-496e-9299-dd535d297485" class="">유튜브, 트위치, 아프리카 TV의 게임 콘텐츠를 큐레이션하여 제공하는 TV앱</p><p id="b88e240a-dc5e-4c0d-9a37-4b3e564f0760" class=""><strong>수행 업무</strong></p><ul id="309388fe-401b-475d-a295-e21edd524da6" class="bulleted-list"><li>유튜브, 트위치, 아프리카 3개 사에서 각각 제공하는 외부 플레이어를 공통적으로 사용 및 에러 처리할 수 있는 인터페이스 개발</li></ul><ul id="30ea91b8-fb7b-49a8-a482-284322b31bce" class="bulleted-list"><li>HLS(Http Live Streaming) 플레이어 활용하여 m3u8형태의 트위치 영상 재생 및 제어, 에러 처리 등 개발</li></ul><ul id="4d6b866f-2f08-4a52-b9f2-bf93dd5b75f1" class="bulleted-list"><li>Jenkins 이용하여 player모듈을 Split하여 배포</li></ul><ul id="2a130777-a009-4353-90b1-47073f430e9b" class="bulleted-list"><li>Tizen Notification 기능 활용 실시간 알림 서비스 구현</li></ul><ul id="9619f0e5-7a7e-4e7b-b08f-8ac86d318658" class="bulleted-list"><li>Tizen Background Service를 이용하여 관심팀 일정 받아오기 등 구현</li></ul></div></div><p id="d8d11e98-d4fc-41c4-8fed-9fbae52eed26" class="">
+</p><p id="06e818f6-4422-4e45-aa5d-4fc4ef0141ed" class="">
+</p><h2 id="5e1c1c89-3232-4c5f-9a71-e15c55f2dd40" class="block-color-teal_background">웹 - 모바일, PC</h2><ul id="ab2434e4-099d-48eb-9444-abf46544b60c" class="bulleted-list"><li>적응형, 반응형 사이트 개발</li></ul><ul id="67f80102-66d2-4281-b839-f9915553b24c" class="bulleted-list"><li>SEO 적용 (Prerender)</li></ul><ul id="8659d280-c5a6-4e14-9267-3deb75427e01" class="bulleted-list"><li>웹접근성 Level AA</li></ul><ul id="ab4c840f-8479-47f5-a0e8-2a8c5a4ea981" class="bulleted-list"><li>다국어 처리 (i18n)</li></ul><p id="058084da-526c-4ece-82fd-84b9587ee9a0" class="">
+</p><div id="c1dd5d05-f96a-4229-a1f8-1015cc64d4fb" class="column-list"><div id="7563949f-37c1-4c63-8f4f-b8d66daaf558" style="width:25%" class="column"><h3 id="fa1ce589-0e0a-4009-9a0c-333fac85aaef" class="">삼성전자 냉장고
+글로벌 홍보 사이트</h3></div><div id="85601dfa-a5c2-4f5c-9b32-438f091e1607" style="width:75%" class="column"><p id="9292e81a-ce53-476e-a150-bc0f2967cbdf" class=""><strong>수행업무</strong></p><ul id="cc48fe13-765f-44c7-a1f6-6f429419bc90" class="bulleted-list"><li>삼성전자 내에 포함되기 위한 최소 웹접근성 Level AA 기준에 만족하는 웹사이트 제작</li></ul><ul id="8c625ab1-3cce-41a2-aaa2-048b579adf88" class="bulleted-list"><li>PC부터 모바일까지 해상도 대응 및 적응형  적용</li></ul><ul id="c8197817-b7ec-4109-b757-458355736bc1" class="bulleted-list"><li>50여개 언어로 번역되어 SEO가 적용될 수 있도록 Prerender 적용</li></ul><p id="4a7551e9-3e85-437c-ab65-be0ca2657054" class="">
+</p></div></div><hr id="266602f5-0b1a-402f-bd35-9444e29cb48c"/><p id="35a2b1c3-849b-45f5-b2d4-5de0a1df895f" class="">
+</p><div id="288e486b-3c4f-49e5-a2c8-02a934f34f6f" class="column-list"><div id="87120fbc-5191-415f-b00c-618144c0f4df" style="width:25%" class="column"><h3 id="9ab6035b-ba48-4146-bce4-0901cf641297" class="">StarDevPortal</h3><p id="163137a6-4ef5-4a92-847a-a49b429f0b97" class="">
+</p></div><div id="89646a03-1dd0-4d10-aeb8-48d98698c14c" style="width:75%" class="column"><p id="5028d0f5-3948-4db4-a67b-983f992546b0" class="">삼성 사내에서 사용되는 AI 관련 내부 서비스 개발</p><p id="5461d5f6-c2d9-4a48-84c4-197f99e199ce" class=""><strong>수행 업무 </strong></p><ul id="96b2a937-b2c6-4f11-ab71-f17286712ae4" class="bulleted-list"><li>삼성에서 개발한 자체 AI 10여 종을 직접 파일을 업로드하면서 체험할 수 있는 페이지 개발</li></ul><ul id="ecb43b12-dfec-48c2-90c5-f1ae4eb95ccc" class="bulleted-list"><li>유저가 업로드한 파일이 각 AI 플랫폼에서 지원하는 파일 형식인지 파일 시그니처로 필터링 기능 개발</li></ul><ul id="5c76f866-74f6-4eed-a802-d1f1859aecda" class="bulleted-list"><li>AI 분석 결과(비디오, 이미지)를 캔버스를 통해 유저가 파악하기 좋은 형태의 UI 개발</li></ul><p id="c3622a41-4ce0-4318-9a16-7c0dc7139264" class="">
+</p></div></div><hr id="3527011d-8e06-424c-adb7-a15f0c06d085"/><div id="649f5e82-cbcd-4629-b2dd-e3653a17c22c" class="column-list"><div id="ed3b6378-2ee6-43d8-80f0-5264cbf83778" style="width:25%" class="column"><h3 id="7256ac19-d3a5-40d2-b378-766f9dfae4dd" class="">Tisplay</h3><p id="9bc7e136-8849-4a4b-8948-230990d40e48" class="">
+</p></div><div id="7f9fc626-05a8-4a8e-9277-67120e12d99f" style="width:75%" class="column"><p id="7b3c1896-f73d-4723-8b97-b09a1a0f00ba" class="">스트리머에게 도네이션 서비스를 하는 스타트업의 웹사이트 개발</p><p id="4b80416c-1484-4da7-b593-b322b324dbf0" class=""><strong>수행 업무 </strong></p><ul id="79b5fe0e-0977-48d1-8717-cdcfe4ca4ac2" class="bulleted-list"><li>유저, 스트리머가 웹 상에서 이미지 및 동영상을 Crop하여 올릴 수 있는 웹 저작도구 개발</li></ul><ul id="3a05c321-ad37-4487-a55b-5f7b913456bc" class="bulleted-list"><li>티스플레이 소개 화면 퍼블리싱</li></ul><figure id="1b91b312-370f-47df-8997-15a22d82d11e"><a href="https://www.tisplay.kr/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Tisplay</div><div class="bookmark-description">&#x27;(주)트리니들&#x27;(이하 &#x27;회사&#x27;)가 운영하는 &#x27;티스플레이 (tisplay)&#x27;은 정보통신망 이용촉진 및 정보보호 등에 관한 법률(이하 &#x27;정보통신망법&#x27;) 제27조의 2에 의거 이용자의 개인정보보호와 권익을 보호하고 관련된 고충 및 애로사항을 신속하게 처리하기 위해 아래의 개인정보처리방침을 제정·운영하고 있습니다. 회사는 관계법령에서 규정하고 있는 책임과 의무를 준수하고 실천하기 위해 최선의 노력을 하고 있습니다.</div></div><div class="bookmark-href"><img src="https://www.tisplay.kr/ko/favicon_tisplay.ico" class="icon bookmark-icon"/>https://www.tisplay.kr/</div></div><img src="https://tisplay2.z32.web.core.windows.net/images/img_main_03_01.png" class="bookmark-image"/></a></figure></div></div><h2 id="1c00c18e-de17-4854-9ea3-113acc93c0c3" class="block-color-teal_background">웹 애니메이션과 차트</h2><ul id="982e08be-8d96-429b-998e-cc9a0da16b80" class="bulleted-list"><li>클라이언트(디자이너)가 원하는 샘플 영상과 비슷한 느낌을 만들기 위해 프레임 단위로 샘플을 분석하고, 특징들을 체계화하여 개발</li></ul><ul id="0a36dd84-6766-498d-8cc5-b00324ba0b3b" class="bulleted-list"><li>높은 fps를 유지하기 위해 WebWorker를 사용하거나 메모리누수를 체크하는 등 최적화를 위해 노력</li></ul><div id="3b0a13bd-0662-4cec-bf30-ed206f55a777" class="column-list"><div id="4e1648e7-2346-48f8-b5b5-108df75dfd20" style="width:25%" class="column"><h3 id="2b1257ab-cc6a-4038-b7d1-6b2b6c4fc990" class="">더 세로 TV 오디오 비쥬얼라이저</h3></div><div id="498a5285-7e18-466b-9792-0c2dbfca12cc" style="width:75%" class="column"><p id="b7837d1a-a8bb-40fe-bb27-e75b9a5e05b4" class=""><strong>수행 업무</strong><div class="indented"><ul id="d7422d78-728a-4e02-a980-0db85af36ecc" class="bulleted-list"><li>모바일이 PC를 Bluetooth Speaker로 인식할 수 있도록 리눅스 PC 세팅</li></ul><ul id="172c8dcf-3b56-4864-b847-7ba35afe0758" class="bulleted-list"><li>Python, Bluez를 통해 현재 재생되고 있는 음악의 아티스트와 제목 가져오기</li></ul><ul id="8a0aedbb-2dbb-4d89-bea6-9712c2c7d48c" class="bulleted-list"><li>Web AudioContext와 WebWorker, Canvas를 사용하여 높은 fps의 음형 Visualizer 구현</li></ul></div></p></div></div><figure id="6f811d5f-4ae8-40c4-8a15-aafaecf1ec6f"><div class="source"><a href="https://youtu.be/u-UKSSa-t8Y">https://youtu.be/u-UKSSa-t8Y</a></div></figure><p id="4dcd7380-e9f5-400e-b600-39fa9ec97b29" class="">
+</p><p id="c5a9f106-8ea0-406d-92d8-d896a5c3e1bb" class="">
+</p><div id="1e9644e6-e670-4160-83b3-0bafc8fc4269" class="column-list"><div id="40f6f686-b94d-4b68-914f-ef46a3a274d8" style="width:25%" class="column"><h3 id="a615eccb-41d2-4f1f-8c67-e2ad50f010c1" class="">Chart Standard for Samsung</h3><p id="b35b0795-8754-45d8-aec1-8674e9abc76c" class="">
+</p></div><div id="b78c72f6-1a0b-42de-b498-ed20fba89b49" style="width:75%" class="column"><p id="2b119938-50e0-4a9e-9261-fac03d52713a" class="">삼성 사내에서 사용되는 차트 디자인 스탠다드 룰을 배포 및 설명하기 위한 가이드 차트 제작</p><p id="ec1ea497-2176-4e2e-bbcd-a18a8334960c" class="">
+<strong>수행업무</strong></p><ul id="4a8fe3ac-ef9c-4db9-a8fe-0464fa5ad30d" class="bulleted-list"><li>시간의 흐름에 따라 수치의 변화를 다이나믹하게 느낄 수 있는 스캐터차트, 버블차트 등 6종 차트 D3로 개발</li></ul><ul id="d2ec310a-68a0-48e9-ab14-0e9c88f96375" class="bulleted-list"><li>타임라인에 따라 애니메이션</li></ul><ul id="4647e81d-6775-4ad9-9c6b-5b26b2444ef6" class="bulleted-list"><li>호버 시 Custom tooltip 및 차트 별 강조 애니메이션 개발</li></ul><ul id="0db63170-c5f1-4b01-b340-4701b1f36841" class="bulleted-list"><li>Legacy 토글 기능 개발</li></ul><p id="9f5eb594-9f23-48d0-a66b-0d197495b2f6" class="">
+</p><p id="46bf778c-8c05-4021-9a69-98ef5284cf5c" class=""><strong>도전 과제</strong></p><ul id="4935c0c1-e2f2-45f0-be70-2fb073a1acf5" class="bulleted-list"><li>연도에 따라 데이터 값이 변경될 때 이전 셋의 ID 관리를 통해 애니메이션이 정확하게 일어나야 함</li></ul><ul id="51725f39-4176-42ab-8504-41468e628217" class="bulleted-list"><li>차트 호버 시 z-index 관리를 통해 유저에게 값을 더욱 명확하게 보여줘야 함</li></ul><ul id="cb6542b6-1064-435a-a1ac-7509f2f34b57" class="bulleted-list"><li>스캐터 차트에서 호버 시 값의 변화 추이를 라인으로 표현</li></ul><ul id="5bedcbea-a088-46c7-8659-bf3f2c38b082" class="bulleted-list"><li>스캐터 차트에서 Slope탭 선택 시 슬로프 차트로 변경</li></ul></div></div><div id="43dca537-6218-4355-92d6-29bc60b0f538" class="column-list"><div id="cd5dc286-7f4b-42d1-ae1d-92ee3ee223e7" style="width:33.333333333333336%" class="column"><figure id="f9fc5234-0430-43f8-9996-70183d59dc26" class="image"><a href="assets/image_0.png"><img style="width:336px" src="assets/image_0.png"/></a></figure></div><div id="304b66d1-781f-444c-888e-833009785e87" style="width:33.333333333333336%" class="column"><figure id="6a79c6ff-d2be-4633-b798-08f7e7f97bdc" class="image"><a href="assets/image_1.png"><img style="width:1768px" src="assets/image_1.png"/></a></figure></div><div id="e7b7e8ee-05a8-4fde-803e-561c24fe59e0" style="width:33.33333333333333%" class="column"><figure id="a9e9a04a-91ad-4297-a876-ee61d724f5a3" class="image"><a href="assets/image_2.png"><img style="width:884px" src="assets/image_2.png"/></a></figure></div></div><div id="9f2309fd-a22b-4896-978e-9f1853b4d2ca" class="column-list"><div id="392dc331-bf5c-4014-84c6-ec6621d7edbe" style="width:33.333333333333336%" class="column"><figure id="bdf5b5e2-26e8-4522-97bd-54fb70301de4" class="image"><a href="assets/image_3.png"><img style="width:878px" src="assets/image_3.png"/></a></figure><figure id="1bb664db-d027-4546-8001-b9efa68a14c1" class="image"><a href="assets/image_4.png"><img style="width:878px" src="assets/image_4.png"/></a></figure></div><div id="b0991930-725e-449d-9f73-e5a4a6aa7b35" style="width:33.333333333333336%" class="column"><figure id="891270c5-fc2c-4396-9d44-4a2f7ee3bd87" class="image"><a href="assets/image_5.png"><img style="width:336px" src="assets/image_5.png"/></a></figure><p id="c885d37e-6b89-432f-a6e3-1de861a6f49e" class="">
+</p></div><div id="856809c3-d88c-4b30-84e2-71a2d544a8af" style="width:33.33333333333333%" class="column"><figure id="1f6ecf37-7215-4b3c-a023-122a7c4846c2" class="image"><a href="assets/image_6.png"><img style="width:878px" src="assets/image_6.png"/></a></figure></div></div><p id="66e1a74a-c94a-41a8-99de-0b4ed9795223" class="">
+</p><div id="ca9a7247-3366-4cbd-8a0b-af15b52966b7" class="column-list"><div id="7c44cf84-de0a-440c-afab-2efa4ac9e72d" style="width:18.75%" class="column"><h3 id="4762ae06-41d0-471d-9bda-1499864612f7" class="">Dynamic Music Album Maker</h3></div><div id="0fe8fce3-7732-4605-bdec-80344c4a6687" style="width:81.25%" class="column"><p id="4ea17bc1-a276-4e63-89e3-9fc8efac902d" class="">스마트폰 내 이미지들로 나만의 뮤직비디오를 자동으로 생성해주는 프로젝트</p><p id="ee4cc57f-ccb3-4b57-91c6-2cd196648546" class=""><strong>수행업무</strong></p><ul id="c4a37d5f-e9ff-4b35-a0ab-e209b31494be" class="bulleted-list"><li>클라이언트가 원하는 분위기의 동영상들을 프레임 단위로 특징들을 분석</li></ul><ul id="74bbe9ce-09ee-40d4-b818-f848d3c2dd89" class="bulleted-list"><li>해당 영상 특징들을 씬 별로 Processing과 p5.js를 이용하여 템플릿화</li></ul><ul id="e26047db-e947-44d9-b24d-c65ae5cd50ee" class="bulleted-list"><li>여러 씬들을 자연스럽게 이어붙일 수 있는 기능 구현</li></ul><ul id="122f48d3-2bb5-445e-b8fc-221cea7ee2a3" class="bulleted-list"><li>스마트폰에서 받아온 이미지와 가사들로 나만의 뮤직비디오를 생성</li></ul></div></div><figure id="fa8fcb3e-baad-46a1-ba7c-de1b5d06051d"><div class="source"><a href="https://youtu.be/ws5Smbf77As">https://youtu.be/ws5Smbf77As</a></div></figure><p id="f6c60a8a-77c2-4017-9ab9-ea6b43b03470" class="">
+
+</p><h2 id="78b3b35f-d1ee-45d0-a4eb-904eaa0895ef" class="block-color-teal_background">하드웨어 프로토타이핑</h2><ul id="63723e23-ed72-41b0-8d6a-1fca6785ac0c" class="bulleted-list"><li>삼성전자 제품 디자인팀과 협업하여 신제품의 하드웨어 목업과 함께 UI/UX 디자인을 프레젠테이션 하기 위한 데모 웹앱을 개발하여 제품들이 실제 상용화되는데 성공함</li></ul><ul id="7c628c8b-ec82-4b16-9c49-36b6f7bd55ab" class="bulleted-list"><li>Arduino ↔ NodeJS ↔ Web 간 Serial, Websocket 통신 인터페이스 개발</li></ul><ul id="a70b9e8d-dc7a-4572-82d9-6bf8baaa9cf5" class="bulleted-list"><li>다양한 종류의 Sensor, Actuator를 웹과 결합</li></ul><div id="2e9e7f78-d6bb-4deb-99d1-99210e7019a1" class="column-list"><div id="bb482246-0b4e-4302-aac4-e0235a1d5be4" style="width:25%" class="column"><h3 id="9e785a4c-46da-41ba-9907-8bce4393b31b" class="">삼성 더 세로 TV
+1, 2차 프로토타이핑</h3><p id="b4107514-af5c-41eb-b8d6-aceba55bf8fc" class="">
+</p></div><div id="60b611e9-71a9-4bc4-bfc6-7956d8357367" style="width:75%" class="column"><p id="4991fd6a-130b-4230-8935-a24d34340952" class=""><strong>수행업무</strong></p><ul id="f57aed1b-5ce1-4141-ac35-41df6d2d1985" class="bulleted-list"><li>전체 개발 리딩</li></ul><ul id="ad4fa312-df86-4f6d-beaf-9b8b4a81b04b" class="bulleted-list"><li>하드웨어 제어를 위한 Arduino 개발 (Event Queue, Button, Relay를 이용한 예외 상황 처리 등)</li></ul><ul id="61b7ae18-b72c-425a-babe-75c8a7d2bc38" class="bulleted-list"><li>가로 ↔ 세로 변환되는 TV의 특징을 살린 데모웹 개발</li></ul></div></div><figure id="70747685-71d9-4cc5-bea1-d4dd30ef174a" class="image"><a href="assets/image_7.png"><img style="width:1000px" src="assets/image_7.png"/></a><figcaption>출처 : 삼성전자 뉴스룸</figcaption></figure><p id="8b9e16fc-ddb5-45a7-81ac-4bfd879151b1" class="">
+</p><hr id="3d12086e-7f7e-42d0-877b-69283a554882"/><p id="4605eb0b-6b4c-47cf-bf62-7a97e4209c9d" class="">
+</p><div id="7e2208f6-5ef4-41e1-ad80-bc13a306916e" class="column-list"><div id="f47c47aa-2261-423f-8f83-1dc52f9c5f4a" style="width:31.25%" class="column"><h3 id="8a0c9eb3-cab3-4b06-9bc7-f2e0538c2b79" class="">갤럭시 워치 S3
+프로토타이핑</h3></div><div id="2a8d5ae6-2cce-4547-8a78-af4ef47c4777" style="width:68.75%" class="column"><p id="b6f5359e-b572-42bf-8ce4-7d37a7801f9c" class=""><strong>수행 업무</strong></p><ul id="4ee6ecb9-10ce-4f4d-a751-ba00ddc80b97" class="bulleted-list"><li>하드웨어 제어를 위한 Arduino 개발</li></ul><ul id="ae6b8789-574f-4eab-8ebf-b547f7e36a3c" class="bulleted-list"><li>차세대 시계 UX의 전체 시나리오에 해당하는 데모앱 개발</li></ul></div></div><p id="724b2da7-fa62-42e5-b791-828fb56acaa8" class="">
+</p><div id="6add6e35-36d6-4ddc-bd06-4e4cca9f4921" class="column-list"><div id="9ea824f3-18aa-4970-b890-b4ff7bb5d3a4" style="width:50%" class="column"><figure id="18c56033-7d30-44d3-93e1-e316daf7e525"><div class="source"><a href="https://youtu.be/5YS6Y5sgfTE">https://youtu.be/5YS6Y5sgfTE</a></div></figure></div><div id="866fd679-70f1-4408-ba9f-7d087cfca955" style="width:50%" class="column"><figure id="02915f70-b787-4882-9db0-4fc4d28c72a3"><div class="source"><a href="https://youtu.be/RxcoN3ETkL8">https://youtu.be/RxcoN3ETkL8</a></div></figure></div></div><p id="35c35c85-be35-4dd1-a888-47256931029e" class="">
+</p><p id="2f3103c2-d754-47ad-87e8-28b192cb68f5" class="">
+</p><h2 id="58b6ade9-9f05-45c6-9176-853eb103d091" class="block-color-teal_background">개인 프로젝트</h2><div id="60f9fc37-252d-4105-8517-89e0d5e62638" class="column-list"><div id="4714ce4a-f64d-42d7-893a-b0ffed2ce9ab" style="width:25%" class="column"><h3 id="d51ebde9-fa10-4f2a-8a68-c1d1a4cbf8bf" class="">NCS 기출문제</h3><p id="5c9ab619-0eb5-4f39-a3fd-7d73288555a4" class="">Android ⭐3.83 (Download 13K)</p><p id="89933244-c95b-439c-8d13-650b71b6c6cd" class="">iOS ⭐4.5</p><p id="28672779-458c-48a0-9775-3227c0443118" class="">(Download 7K)</p><p id="c20916a2-2ced-49e1-9470-3c8c797c6063" class="">
+</p></div><div id="4fc8a1c3-7899-41e1-94d2-00e6177b0615" style="width:75%" class="column"><p id="bd8ab7a2-bbdc-408d-8db2-79a791bc1603" class=""><strong>기획 의도</strong></p><ul id="145e6eb3-02bc-47db-8504-6f90c371cc55" class="bulleted-list"><li>NCS 수학 문제집을 보면서 연습할 수 있는 예제의 양이 부족하다고 생각하여, 수학 문제를 자동으로 만들어주는 앱을 개발해보고 싶었음</li></ul><p id="5530b357-cbbb-44ef-9f16-1f12f1a7b1a4" class="">
+</p><p id="afbe151f-e066-4260-a548-598ba8c10a44" class=""><strong>개발</strong> <strong>목적</strong></p><ul id="5cf7891c-0939-4012-adbf-2a8a4851f55f" class="bulleted-list"><li>모바일 개발을 위해 공부한 Flutter를 활용하여 가시적인 앱 개발 및 서비스 운영을 해보기</li></ul><ul id="b9e2bd10-967a-4d42-a69c-9bd7682ff2c4" class="bulleted-list"><li>Firebase를 이용하여 Serverless를 경험치 쌓기</li></ul><ul id="4506e14d-1676-4f6e-9330-25b410706a54" class="bulleted-list"><li>Firebase Auth, Firestore를 활용하여 사용자 기록 쌓기</li></ul><ul id="8c60b8e8-1b1a-474f-8581-0fef555e8d33" class="bulleted-list"><li> 이슈 발생 시 긴급하게 대응할 수 있도록 서비스를 분리해보기</li></ul><ul id="45c1ab5e-3e66-420f-a85e-7cfe518311d8" class="bulleted-list"><li>수학 문제 자동 생성을 위해 수학 문제집들을 분석하여 문제와 정답지, 보기 등을 템플릿화하고, 이를 서버에서 관리하여 문제에 에러가 있을 경우 빠르게 배포</li></ul><p id="621a5759-3a15-4629-9855-242db6b9852c" class="">
+</p><p id="3cc5e54c-7f2f-48e8-9a77-76f9e6332012" class=""><strong>도전 과제</strong></p><ul id="dfe994cd-88f2-4d1b-9c01-1a1a9e85c350" class="bulleted-list"><li>Javascript 특성 상 수학에서 분수 등을 계산할 때 소수점이 되어 정확하게 안떨어지거나 정수가 float되는 이슈 발생</li></ul></div></div><div id="d14b0951-3c6d-4e83-9a61-fc21fd7f8c6b" class="column-list"><div id="b133f9ab-b9c4-4c7d-a463-e9edadf898f3" style="width:33.33333333333333%" class="column"><figure id="b311bdc4-40cc-460f-8748-cd03ea5187ed" class="image"><a href="assets/image_8.png"><img style="width:1242px" src="assets/image_8.png"/></a></figure></div><div id="8fd4f379-681e-4b7d-a31d-aa7a900e9814" style="width:33.333333333333336%" class="column"><figure id="f8853b9d-a89b-4350-a8fc-7295d45b557f" class="image"><a href="assets/image_9.png"><img style="width:1242px" src="assets/image_9.png"/></a></figure></div><div id="58bf51e6-820a-4611-862d-a8b9ba547e2e" style="width:33.333333333333336%" class="column"><figure id="35f40ada-87e1-46d7-813e-103d60b03e27" class="image"><a href="assets/image_10.png"><img style="width:1242px" src="assets/image_10.png"/></a></figure><p id="d92a5985-affb-45c3-a035-de95a920a1cf" class="">
+</p></div></div><h1 id="95af847a-531b-4b0c-b1f9-f392a182671c" class="block-color-yellow_background">Other Experience</h1><p id="3599944c-bd00-4086-a67e-b1d1fbd5167d" class="">
+</p><div id="98a37e7a-775b-4d97-b2cd-403a3bc0ccc9" class="column-list"><div id="f7e98d2a-5197-4b14-a8b5-8bd7f5149cb1" style="width:25%" class="column"><h3 id="e79bff46-40f5-4214-b956-c7249f56996b" class="">멘토링</h3><p id="8028916a-c8de-46c0-8e0c-95a1b72282df" class="">광주 창조경제 혁신센터 오픈랩 IoT 멘토</p><p id="51817a6c-b3d6-453b-829b-f7089f43578e" class="">(2015년 ~ 2017년)</p></div><div id="3efea06e-d902-4163-b5cf-ca28ca6f567d" style="width:75%" class="column"><ul id="af7ff02a-019e-4de6-924d-91c5bef5809d" class="bulleted-list"><li>개발 입문자들을 대상으로 여러가지 IoT 메이커 활동에 필요한 아이디어 구상 및 실제 H/W 및 S/W 개발을 할 수 있도록 강의 및 멘토링 진행</li></ul><ul id="6fbe5931-b5b8-4b16-83cf-b20096e86ad3" class="bulleted-list"><li>그 외 다양한 해커톤에서 개발 서포터</li></ul></div></div><figure id="f2ce9ef8-7969-4582-a6ec-1950dfa77fb0" class="image"><a href="assets/image_11.png"><img style="width:720px" src="assets/image_11.png"/></a></figure><p id="e9f83a0f-01d5-40e1-b917-bcf53c278df9" class="">
+</p><h1 id="66d83f52-7355-41fa-8118-5c8cac54b4e2" class="block-color-yellow_background">수상경력</h1><h3 id="43685317-d9d6-4215-9f55-4cfd5fef315e" class="">갤럭시 기어 해커톤 2014 (2014.5) - 우수상</h3><figure id="3a6ef9d9-4bfe-42e2-a0e2-41858a91377c"><a href="http://bit.ly/2Onjwra" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">도심 속 한바탕 축제를 열다, 삼성 기어 해커톤 2014 현장</div><div class="bookmark-description">파릇한 잔디, 음식이 가득한 스낵카, 따스한 담요, 그리고 흥겨운 음악이 흐릅니다. 사람들은 편안한 옷차림으로 거닐고 옹기종기 모여 앉아 대화를 나누기도 하는데요. 여기저기 웃음소리가 끊이질 않습니다. &#x27;혹시 봄 소풍이라도 다녀왔나요?&#x27;라고 지레짐작한 분도 있을 것 같은데요. 이곳은 바로 애플리케이션 개발 경진대회가 열린 &#x27;삼성 기어 해커톤 2014&#x27; 현장 풍경이랍니다.</div></div><div class="bookmark-href"><img src="https://news.samsung.com/kr/favicon.ico" class="icon bookmark-icon"/>http://bit.ly/2Onjwra</div></div><img src="https://img.kr.news.samsung.com/kr/wp-content/uploads/2014/05/%EC%B5%9C%EC%83%81%EB%8B%A811.jpg" class="bookmark-image"/></a></figure><p id="5a185c43-1173-4215-86e2-1a5efae835ae" class="">
+</p><hr id="f353e9cd-0c6f-43d3-b7f0-4857ae41da28"/><p id="5df43ca5-2e98-4378-a78f-e3473606bb1c" class="">
+</p><div id="c8e50693-b811-4b2d-80f3-7dbdc430dfca" class="column-list"><div id="a3b77fd8-c115-4421-b361-f197c54ce591" style="width:37.5%" class="column"><h3 id="801a061b-f4de-409c-869e-936c2b30b23c" class="">드림엔터 IoT 해커톤 (2014.12)</h3><p id="58eb30d9-583e-48d7-8bc3-7afea29bf005" class=""><strong>장려상</strong></p></div><div id="f8faae29-4347-497b-bba9-c9649b93c705" style="width:62.5%" class="column"><ul id="f1ade776-129b-408a-bd5e-e042bf030aed" class="bulleted-list"><li>연인 간 커플링에 IoT를 적용해보는 아이디어</li></ul><ul id="d4b8dfe1-d02d-4622-bcc2-b2ed01fce5e8" class="bulleted-list"><li>피에조와 LED, Bluetooth 모듈을 활용하여 최대한 심플한 하드웨어 개발</li></ul></div></div><figure id="39e868ee-527b-447e-9ce1-2f68ab3b722c"><div class="source"><a href="https://www.youtube.com/watch?v=9tIt-RUGWj4&amp;feature=youtu.be">https://www.youtube.com/watch?v=9tIt-RUGWj4&amp;feature=youtu.be</a></div></figure><p id="c9bd6131-a895-4d43-91ba-a84cf722d8d8" class="">
+</p><hr id="8a11bfb6-8494-4ef1-a138-6de6dff72e1a"/><p id="edd61231-618e-49e2-a152-a94ecce0685f" class="">
+</p><div id="e72eb365-acf4-4b9f-a5be-a9424ff13123" class="column-list"><div id="291fe361-af99-48f8-9b7d-e0fe3f3f0c84" style="width:31.25%" class="column"><h3 id="8ea5e2e2-944c-40f0-8e80-1f78b2a166c2" class="">한글 창의 공모전 2015</h3><p id="5e1c8bbc-b6a1-4890-96dc-69a0ca8d8cec" class=""><strong>장려상</strong></p></div><div id="72f9ad71-d061-4723-a305-7f8f4f9bfaca" style="width:68.75%" class="column"><ul id="f8cbaa92-5cf5-4632-b43d-476c0c710106" class="bulleted-list"><li>한글의 특징을 살린 한글 학습용 AR 앱</li></ul><ul id="e165c132-5715-49a7-be7b-d4b14e80e8c0" class="bulleted-list"><li>자/모음 블럭을 조합하여 AR에 비추면 그와 관련된 동물 등이 블럭 위에 보이고, 글씨를 따라 써볼 수 있는 등 기능 제공</li></ul><ul id="ec0aebb0-eca6-4d2d-b504-636bcca3ec86" class="bulleted-list"><li><strong>Unity3D</strong>와 <strong>Vuforia</strong>를 활용하여 개발</li></ul><ul id="c6181b31-bf5b-4e25-b910-f59d22d4dd0a" class="bulleted-list"><li>자, 모음, 받침 조합에 대한 알고리즘 개발 (ㄱ 과 ㄴ, ㅏ ㅓ ㅗ ㅜ 등)</li></ul></div></div><figure id="dedfc767-cbd2-4b55-9b25-88bd14a58ae5"><div class="source"><a href="https://youtu.be/Ur87EKXVENo">https://youtu.be/Ur87EKXVENo</a></div></figure><p id="f57fc7df-d8ce-48a2-920c-7dd235f99f61" class="">
+</p><hr id="77441a17-6741-4fc7-86ae-08c2c22616e8"/><p id="a887827e-e045-4546-90ff-49d47c5965a7" class="">
+</p><div id="0a9a7bbe-ccd3-426f-a733-9668682f559e" class="column-list"><div id="b6333997-0cb8-4636-8217-60606a22902f" style="width:37.5%" class="column"><h3 id="a9d8740e-341a-4557-9e59-148f83333034" class="">한중일 패션 웨어러블 해커톤(2015.11) </h3><p id="ccb299bc-688e-44fb-99ef-785597f47f6c" class=""><strong>최우수 미래부장관상</strong></p><p id="decd3801-6cb7-40d1-870e-0293d2037d5c" class="">
+</p></div><div id="5805e806-eadc-4def-93a9-38e54eaafe76" style="width:62.5%" class="column"><ul id="f6251c4b-2709-4533-9119-9da0ef7a2008" class="bulleted-list"><li>중국인 디자이너, 기획자와 함께 프로젝트 진행</li></ul><ul id="cfbdcad4-656c-4ec7-a8cc-d44a2f7093cc" class="bulleted-list"><li>쉽게 싫증 낼 수 있는 아이들의 캐릭터 의류를 LED모듈로 교체하여 부모가 언제든지 아이 의류의 캐릭터를 바꿀 수 있도록 커스텀한 이미지를 샘플링을 통해 LED Pixel에 나타나도록 개발</li></ul><ul id="628d83a6-78ba-4064-88ed-7e2fe6282cf7" class="bulleted-list"><li>미아방지를 위해 부모와 일정 거리 이상 떨어 졌을 시 경고음을 발산하는 기능 개발</li></ul></div></div><figure id="14f3805e-0169-46c9-a2de-a6db1ec5fd5b"><div class="source"><a href="https://youtu.be/9yTAmCqbXtA">https://youtu.be/9yTAmCqbXtA</a></div></figure><p id="ba44680e-2926-4f90-9d47-eb78d7ba7301" class="">
+</p><h1 id="523ae587-aca5-42f0-ac42-7eddbc37ac30" class="block-color-yellow_background">학력 사항</h1><h3 id="b8060e12-9cda-4fb8-8e0f-e76076808689" class="">숭실대 글로벌 미디어 학부 졸업</h3><p id="17a99c38-0b38-4982-bd3c-3b5f91f31a89" class="">2009년 3월 ~ 2013년 8월 (편입)</p><p id="78833acc-393f-4765-8888-74ae36ee2b19" class="">학점 4.09/4.50</p><ul id="3c7621d9-bf52-49e4-99ec-7907a9e0c27a" class="bulleted-list"><li>DB, 컴퓨터 그래픽스, 멀티미디어 및 IT 비지니스 관련 수업 이수</li></ul><ul id="f26bff4d-2c1f-47fb-ae61-e5cb25cce740" class="bulleted-list"><li>졸업 작품 - 헤드트래킹을 활용한 VR 디스플레이와 이를 활용한 게임 개발(Unity3D, MS Kinect)</li></ul><hr id="da235ad1-60b3-42d0-9eda-b1a8de994ea4"/><h3 id="38158c6a-641b-45b4-9787-fad65100edf4" class="">숭실대 전산원 멀티미디어학부 졸업</h3><p id="aa33714c-a0bc-465f-b418-ae1fabc43913" class="">2007년 3월 ~ 2009년 2월</p><p id="0e00a468-5989-4e44-9918-d4ef3ffcb518" class="">학점 4.30/4.50</p><hr id="1c2ab57f-e02f-4c05-ad48-fcab69da0fb6"/><h3 id="db70d1a8-bb52-44d9-86ac-cd75d902ed48" class="">광명고등학교(경기) 졸업</h3><p id="9de71644-5b55-41ce-b557-7319e3607279" class="">2004년 3월 ~ 2009년 2월</p><p id="a79c2616-d74b-42c2-a0fa-da1aa4131a59" class="">
+</p><h1 id="ffcfccfa-b061-4a56-8941-e62747a10eed" class="block-color-yellow_background">자격증</h1><h3 id="5e65469d-7ab7-48c4-b3c4-0b8c3443ac8c" class="">정보처리 기사</h3><p id="0c5f7236-8076-485c-bca9-326ada078d9e" class="">2013년 5월</p><h3 id="8d5e40f9-c2f0-4e0a-ac99-3aca1ffb614a" class="">멀티미디어 콘텐츠 제작 전문가</h3><p id="af5e9c33-99ad-4113-92fe-8997e431401a" class="">2008년 6월</p><h3 id="203cfb5f-5690-4618-ab18-a25fe3858192" class="">한국사 능력 검정 1급 </h3><p id="66d3674e-1b96-46ce-9624-08af196c8a71" class="">2018년 8월</p><p id="b2ff0e61-966a-4c69-b06f-a4a351d0a274" class="">
+</p><p id="15d4d807-6a06-4c19-8dff-8e53ee9a1858" class="">
+</p></div></article></body></html>
